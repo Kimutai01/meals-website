@@ -5,7 +5,6 @@ const GetFood = () => {
       const meals = data.meals;
       meals.forEach((meal) => {
         displayData(meal);
-        console.log(meal);
       });
     });
 };
@@ -23,21 +22,23 @@ const displayData = (meal) => {
                     <button id=${meal.idMeal} class='comments'>comments</button>
                 </div>
                 <div class='details'>
-                    <p>️❤️</p>
-                    <p>0</p>
+                    <p class='like-button' id='${meal.idMeal}'>️❤️</p>
+                    <p class='like-count' id='${meal.idMeal}'>0</p>
                 </div>
                  </div>
 
             </div>
     `;
+  showLikes();
+  addLike();
   const popup = div.querySelectorAll(".comments");
   popup.forEach((pop) => {
     pop.addEventListener("click", (e) => {
       //   displayPopup();
       displaySingle(e.target.id);
       const popupDiv = (document.querySelector(".popup-overly").style.display =
-        "block");
-      const mini = (document.querySelector(".modal1").style.display = "block");
+        "flex");
+      const mini = (document.querySelector(".modal1").style.display = "flex");
     });
   });
 };
@@ -51,8 +52,6 @@ const displaySingle = (id) => {
       // console.log(data.meals.);
       const singleMeal = data.meals;
       singleMeal.forEach((one) => {
-        console.log(one);
-
         displayPopup(one);
       });
     });
@@ -65,12 +64,24 @@ const displayPopup = (data) => {
     <button class='back'>back</button>
    <img src="${data.strMealThumb}" alt="${data.strMeal}">
    <h2>${data.strMeal}</h2>
-   <div>
-   <p>Area:${data.strArea}</p>
-   <p>category:${data.strCategory}</p>
+   <div class='details'>
+   <p><strong>Area:</strong>${data.strArea}</p>
+   <p><strong>category:</strong>${data.strCategory}</p>
    </div>
+   <h2>Instructions</h2>
+   <p>${data.strInstructions}</p>
+   <button><a href="${data.strYoutube}">Youtube link</a></button>
+   </div>
+   
     </div>
   `;
+
+  const filtered = Object.entries(data).filter(
+    ([key, value]) =>
+      key.includes("strIngredient") && value !== null && value !== ""
+  );
+  console.log(filtered);
+
   const backButton = document.querySelector(".back");
   backButton.addEventListener("click", () => {
     const popupDiv = (document.querySelector(".popup-overly").style.display =
@@ -79,3 +90,51 @@ const displayPopup = (data) => {
     modal.innerHTML = "";
   });
 };
+
+const addLike = () => {
+  const AllLikes = document.querySelectorAll(".like-button");
+  AllLikes.forEach((likebtn) => {
+    likebtn.addEventListener("click", async (e) => {
+      const postLikes = await fetch(
+        "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/likes",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            item_id: e.target.id,
+          }),
+        }
+      );
+
+      const getLikes = await fetch(
+        "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/likes"
+      );
+      const gottenLikes = await getLikes.json();
+      gottenLikes.forEach((dat) => {
+        if (dat.item_id === String(e.target.id)) {
+          e.target.nextElementSibling.innerText = dat.likes;
+        }
+      });
+    });
+  });
+};
+
+const showLikes = async () => {
+  const gotlikes = document.querySelectorAll(".like-count");
+
+  const getLikes = await fetch(
+    "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/likes"
+  );
+  const gottenLikes = await getLikes.json();
+  gotlikes.forEach((like) => {
+    // console.log(like.item_id);
+    gottenLikes.forEach((single) => {
+      if (like.id === single.item_id) {
+        like.innerText = single.likes;
+      }
+    });
+  });
+};
+document.addEventListener('DOMContentLoaded',()=>{
+  
+})
