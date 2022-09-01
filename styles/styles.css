@@ -46,7 +46,7 @@ nav {
 .single-meal {
   margin-top: 100px;
   width: 250px;
-  height: 370px;
+  height: 380px;
   margin-left: 50px;
   background-color: #071124;
   display: flex;
@@ -54,6 +54,10 @@ nav {
   align-items: center;
   border-radius: 20px;
   color: aliceblue;
+  transition: all 400ms linear;
+}
+.single-meal:hover {
+  transform: scale(1.05);
 }
 .single-meal > img {
   width: 250px;
@@ -83,6 +87,7 @@ nav {
   background-color: #1f2342;
   cursor: pointer;
   border: none;
+  color: aliceblue;
 }
 .comments:hover {
   background-color: #0a3e57;
@@ -130,3 +135,27 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+.like-button {
+  font-size: 40px;
+}
+.like-button:hover {
+  color: red;
+}
+.back {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.you {
+  background: none;
+  border: none;
+}
+.you > a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+

@@ -16,7 +16,7 @@ const displayData = (meal) => {
 
      <div class="single-meal">
                 <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-                <h2>${meal.strMeal}</h2>
+                <h3>${meal.strMeal}</h3>
                 <div class='further'>
                 <div class='button'>
                     <button id=${meal.idMeal} class='comments'>comments</button>
@@ -36,6 +36,7 @@ const displayData = (meal) => {
     pop.addEventListener("click", (e) => {
       //   displayPopup();
       displaySingle(e.target.id);
+      showComments(e.target.id);
       const popupDiv = (document.querySelector(".popup-overly").style.display =
         "flex");
       const mini = (document.querySelector(".modal1").style.display = "flex");
@@ -61,7 +62,7 @@ const displayPopup = (data) => {
   const modal = document.querySelector(".modal1");
   modal.innerHTML += `
    <div class="modal-content">
-    <button class='back'>back</button>
+    <button class='back'>❌</button>
    <img src="${data.strMealThumb}" alt="${data.strMeal}">
    <h2>${data.strMeal}</h2>
    <div class='details'>
@@ -70,17 +71,27 @@ const displayPopup = (data) => {
    </div>
    <h2>Instructions</h2>
    <p>${data.strInstructions}</p>
-   <button><a href="${data.strYoutube}">Youtube link</a></button>
+   <button class='you'><a href="${data.strYoutube}">Youtube link</a></button>
+   <h3>Comments</h3>
+    <form class='form-comments'>
+      <input type="text" id='name' />
+      <input type="text" id='comment' />
+      <input type="submit" id=${data.idMeal} class='sub-comment' />
+    </form>
+   <div class= 'shown-comments'>
+   </div>
    </div>
    
     </div>
   `;
-
+  displayComments();
+  postComment();
   const filtered = Object.entries(data).filter(
     ([key, value]) =>
       key.includes("strIngredient") && value !== null && value !== ""
   );
   console.log(filtered);
+  showComments();
 
   const backButton = document.querySelector(".back");
   backButton.addEventListener("click", () => {
@@ -135,6 +146,66 @@ const showLikes = async () => {
     });
   });
 };
-document.addEventListener('DOMContentLoaded',()=>{
-  
-})
+// document.addEventListener("DOMContentLoaded", () => {});
+const displayComments = () => {
+  const form = document.querySelector(".form-comments");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const id = document.querySelector("#name");
+    const com = document.querySelector("#comment");
+    console.log(id.value, com.value);
+  });
+};
+
+const postComment = () => {
+  const Allcomments = document.querySelectorAll(".sub-comment");
+  Allcomments.forEach((likebtn) => {
+    likebtn.addEventListener("click", async (e) => {
+      alert(123);
+      e.preventDefault();
+      const user = document.querySelector("#name");
+      const com = document.querySelector("#comment");
+      const posCom = await fetch(
+        "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/comments",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            item_id: e.target.id,
+            username: user.value,
+            comment: com.value,
+          }),
+        }
+      );
+      const getComments = await fetch(
+        `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/comments?item_id=${e.target.id}`
+      );
+      const gottenComments = await getComments.json();
+      console.log(gottenComments);
+      gottenComments.forEach((com) => {
+        document.querySelector(".shown-comments").innerHTML += `
+        <div class="each-comment">
+      <p><i class="fa-solid fa-user"></i>  ${com.username.toUpperCase()}</p>
+      <p>  <i class="fa-solid fa-comment"></i> ${com.comment}</p>
+      </div>
+        `;
+      });all - comments - section; 
+    });
+  });
+};
+
+const showComments = async (id) => {
+  const getComments = await fetch(
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/comments?item_id=${id}`
+  );
+  const gottenComments = await getComments.json();
+  console.log(gottenComments);
+  gottenComments.forEach((com) => {
+    document.querySelector(".shown-comments").innerHTML += `
+        <div class="each-comment">
+      <p><i class="fa-solid fa-user"></i>  ${com.username.toUpperCase()}</p>
+      <p>  <i class="fa-solid fa-comment"></i> ${com.comment}</p>
+      </div>
+        `;
+  });
+};
