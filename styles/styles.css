@@ -158,4 +158,22 @@ nav {
   font-size: 20px;
   color: black;
 }
-
+.shown-comments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+.each-comment {
+  background-color: #0d1321;
+  color: white;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: "Merienda", cursive;
+  padding-left: 10px;
+  width: 40%;
+  margin: 2%;
+}
+.each-comment i {
+  color: white;
+}
