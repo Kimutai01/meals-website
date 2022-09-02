@@ -85,7 +85,6 @@ const displayPopup = (data) => {
    
     </div>
   `;
-  displayComments();
   postComment();
   const filtered = Object.entries(data).filter(
     ([key, value]) =>
@@ -148,15 +147,6 @@ const showLikes = async () => {
   });
 };
 // document.addEventListener("DOMContentLoaded", () => {});
-const displayComments = () => {
-  const form = document.querySelector(".form-comments");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const id = document.querySelector("#name");
-    const com = document.querySelector("#comment");
-    console.log(id.value, com.value);
-  });
-};
 
 const postComment = () => {
   const Allcomments = document.querySelectorAll(".sub-comment");
