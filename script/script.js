@@ -49,8 +49,6 @@ const displaySingle = (id) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      //   displayPopup(data);
-      // console.log(data.meals.);
       const singleMeal = data.meals;
       singleMeal.forEach((one) => {
         displayPopup(one);
@@ -86,11 +84,10 @@ const displayPopup = (data) => {
     </div>
   `;
   postComment();
-  const filtered = Object.entries(data).filter(
-    ([key, value]) =>
-      key.includes("strIngredient") && value !== null && value !== ""
-  );
-  console.log(filtered);
+  // const filtered = Object.entries(data).filter(
+  //   ([key, value]) =>
+  //     key.includes("strIngredient") && value !== null && value !== ""
+  // );
   showComments();
 
   const backButton = document.querySelector(".back");
@@ -138,7 +135,6 @@ const showLikes = async () => {
   );
   const gottenLikes = await getLikes.json();
   gotlikes.forEach((like) => {
-    // console.log(like.item_id);
     gottenLikes.forEach((single) => {
       if (like.id === single.item_id) {
         like.innerText = single.likes;
@@ -172,7 +168,6 @@ const postComment = () => {
         `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/comments?item_id=${e.target.id}`
       );
       const gottenComments = await getComments.json();
-      console.log(gottenComments);
       document.querySelector(".shown-comments").innerHTML = "";
       gottenComments.forEach((com) => {
         document.querySelector(".shown-comments").innerHTML += `
@@ -190,7 +185,6 @@ const showComments = async (id) => {
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/BQmOqtxOBj7eESoqjNWo/comments?item_id=${id}`
   );
   const gottenComments = await getComments.json();
-  console.log(gottenComments);
   gottenComments.forEach((com) => {
     document.querySelector(".shown-comments").innerHTML += `
         <div class="each-comment">
@@ -199,4 +193,3 @@ const showComments = async (id) => {
         `;
   });
 };
-
