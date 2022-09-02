@@ -38,10 +38,7 @@ nav {
   color: aliceblue;
 }
 
-.meals-div {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
+
 
 .single-meal {
   margin-top: 100px;
@@ -173,4 +170,12 @@ nav {
 }
 .sub-content {
   border-radius: 0;
+}
+
+
+@media (max-width: 599px) {
+ .meals-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 }
