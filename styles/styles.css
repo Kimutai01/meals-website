@@ -266,3 +266,7 @@ footer {
   text-align: center;
   padding: 15px;
 }
+.footer-p > a {
+  text-decoration: none;
+  color: rgb(201, 143, 36);
+}
