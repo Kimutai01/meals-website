@@ -148,7 +148,6 @@ const postComment = () => {
   const Allcomments = document.querySelectorAll(".sub-comment");
   Allcomments.forEach((likebtn) => {
     likebtn.addEventListener("click", async (e) => {
-      alert(123);
       e.preventDefault();
       const user = document.querySelector("#name");
       const com = document.querySelector("#comment");
