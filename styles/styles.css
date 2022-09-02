@@ -77,6 +77,10 @@ nav {
 .details p {
   margin-left: 10px;
 }
+#hambuger {
+  font-size: 30px;
+  color: #fefefe;
+}
 .comments {
   width: 80px;
   height: 40px;
@@ -176,12 +180,18 @@ nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+  .ham {
+    display: none;
+  }
 }
 @media (max-width: 1200px) {
   .meals-div {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc(100% / 3), 1fr));
     width: 100%;
+  }
+  .ham {
+    display: none;
   }
 }
 @media (max-width: 850px) {
@@ -192,6 +202,14 @@ nav {
   .nav-list {
     display: none;
   }
+  .ham {
+    color: aliceblue;
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 599px) {
@@ -201,5 +219,13 @@ nav {
   }
   .nav-list {
     display: none;
+  }
+  .ham {
+    color: aliceblue;
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+    justify-content: space-between;
+    margin-left: 10px;
   }
 }
