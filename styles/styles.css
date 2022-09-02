@@ -108,6 +108,8 @@ nav {
   overflow-y: scroll !important;
 }
 .modal1 {
+  color: aliceblue;
+  background: #0e2530 !important;
   display: none;
   border-radius: 10px;
   background-color: #fefefe;
@@ -125,6 +127,7 @@ nav {
   height: 250px;
 }
 .modal-content {
+  background: #0e2530;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,24 +159,18 @@ nav {
 .you > a {
   text-decoration: none;
   font-size: 20px;
-  color: black;
+  color: aliceblue;
 }
-.shown-comments {
+
+.form-comments {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 1%;
+  flex-direction: column;
 }
-.each-comment {
-  background-color: #0d1321;
-  color: white;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-family: "Merienda", cursive;
-  padding-left: 10px;
-  width: 40%;
-  margin: 2%;
+.form-comments > input {
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
-.each-comment i {
-  color: white;
+.sub-content {
+  border-radius: 0;
 }

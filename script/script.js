@@ -19,7 +19,7 @@ const displayData = (meal) => {
                 <h3>${meal.strMeal}</h3>
                 <div class='further'>
                 <div class='button'>
-                    <button id=${meal.idMeal} class='comments'>comments</button>
+                    <button id=${meal.idMeal} class='comments'>View more</button>
                 </div>
                 <div class='details'>
                     <p class='like-button' id='${meal.idMeal}'>️❤️</p>
@@ -72,12 +72,13 @@ const displayPopup = (data) => {
    <h2>Instructions</h2>
    <p>${data.strInstructions}</p>
    <button class='you'><a href="${data.strYoutube}">Youtube link</a></button>
-   <h3>Comments</h3>
+   <h3>Add a comment</h3>
     <form class='form-comments'>
-      <input type="text" id='name' />
-      <input type="text" id='comment' />
+      <input type="text" id='name' placeholder='enter your name' />
+      <input type="text" id='comment' placeholder='enter your reservations' />
       <input type="submit" id=${data.idMeal} class='sub-comment' />
     </form>
+    <h3>Comments</h3>
    <div class= 'shown-comments'>
    </div>
    </div>
@@ -182,14 +183,14 @@ const postComment = () => {
       );
       const gottenComments = await getComments.json();
       console.log(gottenComments);
+      document.querySelector(".shown-comments").innerHTML = "";
       gottenComments.forEach((com) => {
         document.querySelector(".shown-comments").innerHTML += `
         <div class="each-comment">
-      <p><i class="fa-solid fa-user"></i>  ${com.username.toUpperCase()}</p>
-      <p>  <i class="fa-solid fa-comment"></i> ${com.comment}</p>
+        <p>${com.creation_date} @ ${com.username}:${com.comment}</p>
       </div>
         `;
-      });all - comments - section; 
+      });
     });
   });
 };
@@ -203,8 +204,7 @@ const showComments = async (id) => {
   gottenComments.forEach((com) => {
     document.querySelector(".shown-comments").innerHTML += `
         <div class="each-comment">
-      <p><i class="fa-solid fa-user"></i>  ${com.username.toUpperCase()}</p>
-      <p>  <i class="fa-solid fa-comment"></i> ${com.comment}</p>
+     <p>${com.creation_date} @ ${com.username}: ${com.comment}</p>
       </div>
         `;
   });
