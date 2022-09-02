@@ -5,7 +5,7 @@
 > This is a web application that enables users to check a step by step instructions of various meal preparation. Users can also watch videos on how to prepare various meals.
 
 ## Built With
-
+---
 ![](https://img.shields.io/badge/Github-black)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/JavaScript-green)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/HTML-orange)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/CSS-Yellow)
 
 ## Live Demo (if available)
