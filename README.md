@@ -1,54 +1,39 @@
+![](https://img.shields.io/badge/Kiprotich-kimutai-yellow?labelColor=blue)&nbsp;
+
 # Recipe app
 
->This is a web application that enables users to chec
-
+> This is a web application that enables users to check a step by step instructions of various meal preparation. Users can also watch videos on how to prepare various meals.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+![](https://img.shields.io/badge/Ruby-red)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/JavaScript-green)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/HTML-orange)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/CSS-Yellow)
 
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
 
-
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+## Getting a local copy
 
-### Setup
+---
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+```
+git clone https://github.com/Kimutai01/meals-website
+cd meals-website
+```
 
 ## Authors
 
-👤 **Author1**
+👤👤 **Kiprotich Kimutai**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Kimutai01](https://github.com/Kimutai01)
+- Twitter: [@Kimutai_01](https://twitter.com/Kimutai_01?s=09)
+- LinkedIn: [@kiprotichkimutai](https://www.linkedin.com/m/in/kimutai-kiprotich-1b5045216)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤
 
 ## 🤝 Contributing
 
