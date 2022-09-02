@@ -5,12 +5,15 @@
 > This is a web application that enables users to check a step by step instructions of various meal preparation. Users can also watch videos on how to prepare various meals.
 
 ## Built With
+
 ---
+
 ![](https://img.shields.io/badge/Github-black)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/JavaScript-green)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/HTML-orange)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/CSS-Yellow)
 
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
+![screenshot](./des.jpg)
 
 ## Getting Started
 
@@ -32,7 +35,6 @@ cd meals-website
 - GitHub: [@Kimutai01](https://github.com/Kimutai01)
 - Twitter: [@Kimutai_01](https://twitter.com/Kimutai_01?s=09)
 - LinkedIn: [@kiprotichkimutai](https://www.linkedin.com/m/in/kimutai-kiprotich-1b5045216)
-
 
 ## 🤝 Contributing
 
