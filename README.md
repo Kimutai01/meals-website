@@ -6,7 +6,7 @@
 
 ## Built With
 
-![](https://img.shields.io/badge/Ruby-red)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/JavaScript-green)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/HTML-orange)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/CSS-Yellow)
+![](https://img.shields.io/badge/Github-black)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/JavaScript-green)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/HTML-orange)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/CSS-Yellow)
 
 ## Live Demo (if available)
 
@@ -33,7 +33,6 @@ cd meals-website
 - Twitter: [@Kimutai_01](https://twitter.com/Kimutai_01?s=09)
 - LinkedIn: [@kiprotichkimutai](https://www.linkedin.com/m/in/kimutai-kiprotich-1b5045216)
 
-👤
 
 ## 🤝 Contributing
 
