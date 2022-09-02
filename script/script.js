@@ -177,7 +177,7 @@ const postComment = () => {
       gottenComments.forEach((com) => {
         document.querySelector(".shown-comments").innerHTML += `
         <div class="each-comment">
-        <p>${com.creation_date} @ ${com.username}:${com.comment}</p>
+        <p>${com.creation_date} @${com.username}:${com.comment}</p>
       </div>
         `;
       });
@@ -194,7 +194,7 @@ const showComments = async (id) => {
   gottenComments.forEach((com) => {
     document.querySelector(".shown-comments").innerHTML += `
         <div class="each-comment">
-     <p>${com.creation_date} @ ${com.username}: ${com.comment}</p>
+     <p>${com.creation_date} @${com.username}: ${com.comment}</p>
       </div>
         `;
   });
