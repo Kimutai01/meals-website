@@ -10,9 +10,7 @@
 
 ![](https://img.shields.io/badge/Github-black)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/JavaScript-green)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/HTML-orange)&nbsp;&nbsp;&nbsp;![](https://img.shields.io/badge/CSS-Yellow)
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://kim-recipe.netlify.app/)
 ![screenshot](./des.jpg)
 
 ## Getting Started
