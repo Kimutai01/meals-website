@@ -74,6 +74,13 @@ nav {
 .button {
   margin-right: 60px;
 }
+#preloader {
+  background: #000 url(../black.gif) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
 
 .details {
   display: flex;

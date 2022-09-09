@@ -1,3 +1,8 @@
+let loader = document.getElementById("preloader");
+setTimeout(() => {
+  loader.style.display = "none";
+}, 23000);
+
 const GetFood = () => {
   fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=British")
     .then((res) => res.json())
